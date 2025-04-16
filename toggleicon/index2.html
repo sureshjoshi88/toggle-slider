@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Precties</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+
+        .container {
+            width: 300px;
+            height: 450px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn button {
+            width: 100px;
+            height: 30px;
+            background-color: tomato;
+            border-radius: 10px;
+            border: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="last">
+        <div class="row">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOw1SMLOQ7mOMqCAe3SRb0KOHFUxOcrdJ8qw&s"
+                alt="">
+        </div>
+        <h3 class="row" style="margin-top: 40px;">Angel Priya</h3>
+        <h4 class="row" id="text" style="margin-top: 40px;">Follow</h4>
+        <div class="btn row" style="margin-top: 40px;display: flex; gap: 10px;">
+            <!-- <button id="btn">Remove</button> -->
+            <button id="button">Add Friend</button>
+        </div>
+    </div>
+</body>
+<script> 
+    let text = document.getElementById("text");
+    let addFriend = document.getElementById("button");
+    let counter = 0
+
+    /*addFriend.addEventListener('click', function () {
+        text.innerHTML = "Friend Accept";
+        text.style.color = "green";
+
+        });
+
+        let removeFriend = document.getElementById("btn");
+        
+    removeFriend.addEventListener('click', function () {
+        text.innerHTML = "Follow";
+        text.style.color = "red";
+    });*/
+    addFriend.addEventListener(('click') , function () {
+        if(counter < 0){
+            text.innerHTML = "Follow"
+            text.style.color = "Red"
+            addFriend.innerHTML = "Friend Accept" 
+            counter = 1
+        }else{
+            text.innerHTML = "Friend Accept"
+            text.style.color = "green"
+            addFriend.innerHTML = "Cancel Request"
+            addFriend.style.color  = "gold"
+            counter = -1
+        }
+    })
+
+</script>
+
+</html>
