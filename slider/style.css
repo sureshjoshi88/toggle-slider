@@ -14,7 +14,7 @@ img {
 
 .container {
     width: 200px;
-    height: 350px;
+    height: 260px;
     position: relative;
     transform-style: preserve-3d;
     transform: perspective(100000px);
