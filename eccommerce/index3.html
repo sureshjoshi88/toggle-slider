@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            gap: 20px;
+        }
+        .product{
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            
+        }
+        .chidl{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <select name="" id="category" onchange="getproduct()">
+            <option value="All">All</option>
+            <option value="book">book</option>
+            <option value="electroic">electroic</option>
+            <option value="shoes">shoes</option>
+        </select>
+
+        <select name="" id="prize" onchange="getproduct()">
+            <option value="All">All</option>
+            <option value="0-500">500</option>
+            <option value="501-1000">500-1000</option>
+            <option value="1001-1500">1000-1500</option>
+        </select>
+        <input type="search" placeholder="enter a name" id="input" oninput="getproduct()">
+        </div>
+
+        <div class="product">
+            <div class="chidl" data-category="electroic" data-prize="500" >
+                <h2>smatphone</h2>
+                <p>500</p>
+            </div>
+            <div class="chidl" data-category="shoes" data-prize="1000">
+                <h2>nike</h2>
+                <p>1000</p>
+            </div>
+            <div class="chidl" data-category="book" data-prize="1500">
+                <h2>JavaScript</h2>
+                <p>1500</p>
+            </div>
+        </div>
+   
+        <script>
+            function getproduct(){
+                let categoryValue = document.getElementById("category").value
+                let prizeValue = document.getElementById("prize").value
+                let searchinput = document.getElementById("input").value.toLowerCase();
+
+                let child = document.querySelectorAll(".chidl");
+                child.forEach(product=>{
+                    const category = product.getAttribute("data-category");
+                    const prize = parseInt(product.getAttribute("data-prize"));
+                    const title = product.querySelector("h2").textContent.toLowerCase();
+
+                    let categoryMatch = categoryValue === "All" || category===categoryValue;
+                    let priceMatch = false;
+                    if(prizeValue==="All"){
+                        priceMatch = true;
+                    }else{
+                        const [min,max] = prizeValue.split("-").map(Number);
+                        priceMatch = prize>=min && prize<=max;
+
+                    }
+                    let searchmath = title.includes(searchinput);
+                    if(categoryMatch&&searchmath&&priceMatch){
+                        product.style.display = "block";
+                    }else{
+                        product.style.display = "none";
+                    }
+                })
+            }
+        </script>
+</body>
+</html>

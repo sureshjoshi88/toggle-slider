@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Filter</title>
+<style>
+    body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+}
+
+</style>
+</head>
+<body>
+  <h1>Product Filter</h1>
+
+  <div class="filter">
+    <label>Filter by category: </label>
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="all">All</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="books">Books</option>
+    </select>
+  </div>
+
+  <div class="product-list">
+    <div class="product" data-category="electronics">
+      <h2>Smartphone</h2>
+      <p>₹15,000</p>
+    </div>
+
+    <div class="product" data-category="clothing">
+      <h2>T-Shirt</h2>
+      <p>₹500</p>
+    </div>
+
+    <div class="product" data-category="books">
+      <h2>JavaScript Book</h2>
+      <p>₹300</p>
+    </div>
+
+    <div class="product" data-category="electronics">
+      <h2>Headphones</h2>
+      <p>₹1,200</p>
+    </div>
+  </div>
+
+<script>
+    function filterProducts() {
+  const selectedCategory = document.getElementById("categoryFilter").value;
+  const products = document.querySelectorAll(".product");
+
+  products.forEach(product => {
+    const category = product.getAttribute("data-category");
+
+    if (selectedCategory === "all" || category === selectedCategory) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+
+</script>
+</body>
+</html>
