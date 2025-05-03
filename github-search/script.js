@@ -27,3 +27,9 @@ async function searchUser() {
       resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
     }
   }
+
+  let inputs = document.getElementById("username").addEventListener("keypress",(e)=>{
+    if(e.key=="Enter"){
+      searchUser();
+    }
+  })
