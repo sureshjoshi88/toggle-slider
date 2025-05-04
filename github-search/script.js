@@ -12,9 +12,12 @@ async function searchUser() {
 
       if (!response.ok) {
         throw new Error("User not found");
+
       }
+      
 
       const data = await response.json();
+ 
       resultDiv.innerHTML = `
         <img src="${data.avatar_url}" width="100" />
         <p><strong>Name:</strong> ${data.name}</p>
