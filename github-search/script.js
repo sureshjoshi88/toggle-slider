@@ -15,7 +15,6 @@ async function searchUser() {
       }
 
       const data = await response.json();
-
       resultDiv.innerHTML = `
         <img src="${data.avatar_url}" width="100" />
         <p><strong>Name:</strong> ${data.name}</p>
@@ -31,5 +30,6 @@ async function searchUser() {
   let inputs = document.getElementById("username").addEventListener("keypress",(e)=>{
     if(e.key=="Enter"){
       searchUser();
+      
     }
   })
