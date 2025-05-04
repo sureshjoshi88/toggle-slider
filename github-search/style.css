@@ -6,12 +6,16 @@
 input{
     height: 6vh;
     border-radius: 20px;
-    border: 1px solid black;
+    border: 1px solid  rgb(96, 184, 209);
+    padding: 5px;
+    font-size: larger;
 }
 button{
     height: 6.5vh;
     border-radius: 14px;
-    border: 1px solid black;
+    border: 1px solid  rgb(96, 184, 209);
     padding: 3px;
     width: 4rem;
+    background-color: rgb(96, 184, 209);
+    
 }
