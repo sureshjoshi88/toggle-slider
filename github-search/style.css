@@ -11,11 +11,23 @@ input{
     font-size: larger;
 }
 button{
-    height: 6.5vh;
+    height: 7vh;
     border-radius: 14px;
     border: 1px solid  rgb(96, 184, 209);
-    padding: 3px;
-    width: 4rem;
+    padding: 5px;
+    width: 5rem;
     background-color: rgb(96, 184, 209);
-    
+    font-size: larger;
+}
+.result-parent{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-family: serif;
+    margin-top: 10px;
+}
+.result-parent img{
+    width: 16rem;
+    height: 40vh;
+    border-radius: 50%;
 }
