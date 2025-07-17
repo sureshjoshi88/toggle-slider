@@ -44,7 +44,7 @@
   <div class="product-list">
     <div class="product" data-category="electronics">
       <h2>Smartphone</h2>
-      <p>₹15,000</p>
+      <p>₹15,100</p>
     </div>
 
     <div class="product" data-category="clothing">
@@ -64,19 +64,33 @@
   </div>
 
 <script>
-    function filterProducts() {
-  const selectedCategory = document.getElementById("categoryFilter").value;
-  const products = document.querySelectorAll(".product");
+//     function filterProducts() {
+//   const selectedCategory = document.getElementById("categoryFilter").value;
+//   const products = document.querySelectorAll(".product");
 
-  products.forEach(product => {
-    const category = product.getAttribute("data-category");
+//   products.forEach(product => {
+//     const category = product.getAttribute("data-category");
 
-    if (selectedCategory === "all" || category === selectedCategory) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
-    }
-  });
+//     if (selectedCategory === "all" || category === selectedCategory) {
+//       product.style.display = "block";
+//     } else {
+//       product.style.display = "none";
+//     }
+//   });
+// }
+
+function filterProducts(){
+  let salectedCatergory =document.getElementById("categoryFilter").value;
+  let products = document.querySelectorAll(".product");
+
+  products.forEach((product)=>{
+    const catergory = product.getAttribute("data-category");
+    if(salectedCatergory==="all"||catergory===salectedCatergory){
+      product.style.display = "block"
+    }else{
+      product.style.display = "none"
+    } 
+  })
 }
 
 </script>
